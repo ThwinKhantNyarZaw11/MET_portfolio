@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>May Eaindra Thwin - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 1000;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #2c5364 0%, #203a43 50%, #0f2027 100%);
+        }
+        .project-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(4px);
+            transition: transform 0.3s ease;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        .profile-img {
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen text-white">
+    <nav class="glass-nav fixed w-3/4 md:w-1/2 left-1/2 -translate-x-1/2 top-4 rounded-full py-3 px-6">
+        <div class="flex flex-col md:flex-row md:justify-between items-center gap-3 md:gap-0">
+            <span class="text-xl font-bold text-purple-200">May Eaindra Thwin</span>
+            <ul class="flex space-x-4 md:space-x-8">
+                <li><a href="#home" class="hover:text-purple-200 transition">Home</a></li>
+                <li><a href="#about" class="hover:text-purple-200 transition">About</a></li>
+                <li><a href="#projects" class="hover:text-purple-200 transition">Projects</a></li>
+                <li><a href="#contact" class="hover:text-purple-200 transition">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen relative flex items-center justify-center px-4">
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                     alt="Background" 
+                     class="w-full h-full object-cover opacity-30">
+            </div>
+            <div class="text-center relative z-10 bg-black/30 p-8 rounded-xl backdrop-blur-sm">
+                <div class="mb-8 flex justify-center">
+                    <img src="./assets/May Eaindra Thwin.jpg" 
+                         alt="May Eaindra Thwin" 
+                         class="w-48 h-48 rounded-full object-cover profile-img">
+                </div>
+                <h1 class="text-5xl font-bold mb-4">May Eaindra Thwin</h1>
+                <p class="text-xl mb-6">Financial Operations Manager | Freelancer</p>
+                <p class="text-lg text-purple-200">MYANMAR RI FANG</p>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="min-h-screen flex items-center justify-center px-4 py-20">
+            <div class="max-w-3xl">
+                <h2 class="text-4xl font-bold mb-8 text-center">About Me</h2>
+                <p class="text-lg leading-relaxed">
+                    Experienced Financial Operations Manager with a proven track record in remote work environments.
+                    Specializing in financial analysis, operational efficiency, and strategic planning.
+                    Currently serving at MYANMAR RI FANG while taking on freelance projects to expand my expertise.
+                </p>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="min-h-screen px-4 py-20 relative">
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1554774853-719586f82d77?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                     alt="Project Background" 
+                     class="w-full h-full object-cover opacity-20">
+            </div>
+            <div class="relative z-10">
+                <h2 class="text-4xl font-bold mb-12 text-center">Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <a href="projects/financial-dashboard.html" class="project-card rounded-xl p-6 hover:bg-white/20 transition">
+                        <h3 class="text-xl font-bold mb-4">Financial Dashboard System</h3>
+                        <p class="text-purple-200">Real-time financial monitoring and reporting system</p>
+                    </a>
+                    <a href="projects/budget-optimization.html" class="project-card rounded-xl p-6 hover:bg-white/20 transition">
+                        <h3 class="text-xl font-bold mb-4">Budget Optimization Project</h3>
+                        <p class="text-purple-200">Cost reduction and efficiency improvement initiative</p>
+                    </a>
+                    <a href="projects/automated-reconciliation.html" class="project-card rounded-xl p-6 hover:bg-white/20 transition">
+                        <h3 class="text-xl font-bold mb-4">Automated Reconciliation System</h3>
+                        <p class="text-purple-200">Streamlined account reconciliation process</p>
+                    </a>
+                    <a href="projects/risk-management.html" class="project-card rounded-xl p-6 hover:bg-white/20 transition">
+                        <h3 class="text-xl font-bold mb-4">Risk Management Framework</h3>
+                        <p class="text-purple-200">Comprehensive financial risk assessment system</p>
+                    </a>
+                    <a href="projects/compliance-portal.html" class="project-card rounded-xl p-6 hover:bg-white/20 transition">
+                        <h3 class="text-xl font-bold mb-4">Compliance Portal</h3>
+                        <p class="text-purple-200">Financial compliance monitoring platform</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="min-h-screen flex items-center justify-center px-4 py-20">
+            <div class="text-center">
+                <h2 class="text-4xl font-bold mb-8">Contact Me</h2>
+                <div class="space-y-4">
+                    <p class="text-lg">
+                        <span class="font-bold">Email:</span>
+                        <a href="mailto:mayeaindrathwin98@gmail.com" class="text-purple-200 hover:text-purple-300">mayeaindrathwin98@gmail.com</a>
+                    </p>
+                    <p class="text-lg">
+                        <span class="font-bold">Phone:</span>
+                        <a href="tel:0650587978" class="text-purple-200 hover:text-purple-300">065-058-7978</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
