@@ -1,5 +1,35 @@
+// Mobile menu toggle
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+const mobileMenuItems = document.querySelectorAll('#mobile-menu a');
+
+// Toggle mobile menu
+function toggleMobileMenu() {
+    mobileMenu.classList.toggle('hidden');
+    mobileMenu.classList.toggle('flex');
+}
+
+// Close mobile menu when clicking a link
+mobileMenuItems.forEach(item => {
+    item.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex');
+    });
+});
+
+// Toggle mobile menu on button click
+mobileMenuButton.addEventListener('click', toggleMobileMenu);
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+        mobileMenu.classList.add('hidden');
+        mobileMenu.classList.remove('flex');
+    }
+});
+
 // Smooth scrolling for navigation links
-document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+document.querySelectorAll('nav a[href^="#"], #mobileMenu a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
         document.querySelector(this.getAttribute('href')).scrollIntoView({
@@ -20,7 +50,8 @@ window.addEventListener('scroll', () => {
         }
     });
 
-    document.querySelectorAll('nav a').forEach(link => {
+    // Update both desktop and mobile menu active states
+    document.querySelectorAll('nav a, #mobileMenu a').forEach(link => {
         link.classList.remove('text-purple-300');
         if (link.getAttribute('href').includes(current)) {
             link.classList.add('text-purple-300');
