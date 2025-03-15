@@ -6,6 +6,13 @@
     <title>May Eaindra Thwin - Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
         .glass-nav {
             background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(8px);
@@ -27,20 +34,44 @@
             border: 4px solid rgba(255, 255, 255, 0.2);
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
         }
+        .mobile-menu {
+            transform: translateY(-100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .mobile-menu.show {
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body class="gradient-bg min-h-screen text-white">
-    <nav class="glass-nav fixed w-3/4 md:w-1/2 left-1/2 -translate-x-1/2 top-4 rounded-full py-3 px-6">
-        <div class="flex flex-col md:flex-row md:justify-between items-center gap-3 md:gap-0">
-            <span class="text-xl font-bold text-black">May Eaindra Thwin</span>
-            <ul class="flex space-x-4 md:space-x-8">
-                <li><a href="#home" class="hover:text-purple-200 transition">Home</a></li>
-                <li><a href="#about" class="hover:text-purple-200 transition">About</a></li>
-                <li><a href="#projects" class="hover:text-purple-200 transition">Projects</a></li>
-                <li><a href="#contact" class="hover:text-purple-200 transition">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div class="flex justify-center pt-4 fixed w-full top-0 z-50">
+        <nav class="glass-nav rounded-full px-8 py-3 w-full max-w-2xl mx-4">
+            <div class="flex items-center justify-between">
+                <a href="#" class="text-xl font-bold">May Eaindra Thwin </a>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-6">
+                    <a href="#home" class="hover:text-sky-200 transition-colors">Home</a>
+                    <a href="#about" class="hover:text-sky-200 transition-colors">About</a>
+                    <a href="#projects" class="hover:text-sky-200 transition-colors">Projects</a>
+                    <a href="#contact" class="hover:text-sky-200 transition-colors">Contact</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed top-20 left-4 right-4 hidden flex-col glass-card rounded-lg p-4 z-40">
+        <a href="#home" class="py-2 px-4 hover:bg-white/10 rounded transition-colors">Home</a>
+        <a href="#about" class="py-2 px-4 hover:bg-white/10 rounded transition-colors">About</a>
+        <a href="#projects" class="py-2 px-4 hover:bg-white/10 rounded transition-colors">Projects</a>
+        <a href="#contact" class="py-2 px-4 hover:bg-white/10 rounded transition-colors">Contact</a>
+    </div>
 
     <main>
         <!-- Hero Section -->
